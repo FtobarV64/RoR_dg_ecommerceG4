@@ -22,6 +22,15 @@
   </div>
 
   <div>
+    <%= form.label :categories, style: "display: block" %>
+    <%= form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+      <%= b.label class:"label-checkbox" do%>
+        <%= b.check_box + b.text %>
+      <%end%>
+    <% end %>
+  </div>
+
+  <div>
     <%= form.label :stock, style: "display: block" %>
     <%= form.number_field :stock %>
   </div>
